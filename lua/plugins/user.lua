@@ -41,7 +41,7 @@ return {
     priority = 1000,
     config = function()
       require("ayu").setup {
-        mirage = false,
+        mirage = true,
         terminal = true,
         -- overrides = {
         --   Normal = { bg = "None" },
@@ -66,7 +66,8 @@ return {
       require("catppuccin").setup {
         background = { -- :h background
           light = "latte",
-          dark = "frappe",
+          -- dark = "frappe",
+          dark = "macchiato",
         },
         transparent_background = false, -- disables setting the background color.
       }
@@ -202,6 +203,20 @@ return {
         },
       }
     end,
+  },
+
+  ---- Codeium autocompletion
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter',
+    config = function ()
+      vim.g.codeium_disable_bindings = 1
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+    end
   },
 
   -- ================================================================================

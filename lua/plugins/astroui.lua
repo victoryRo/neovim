@@ -11,13 +11,13 @@ return {
   opts = {
     -- change colorscheme
     -- colorscheme = "catppuccin",
-    -- colorscheme = "github_dark",
+    colorscheme = "github_dark",
     -- colorscheme = "github_light",
     -- colorscheme = "astrodark",
     -- colorscheme = "ayu",
     ----------------------------------------
     -- colorscheme = "everforest",
-    colorscheme = "onenord",
+    -- colorscheme = "onenord",
     -- colorscheme = "juliana",
 
 
